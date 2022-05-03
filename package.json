@@ -1,26 +1,64 @@
 {
-  "name": "netlify-deploy-skillup",
+  "name": "storybook-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
+    "@chakra-ui/react": "^1.8.8",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "@material-ui/core": "^4.12.4",
+    "@mui/material": "^5.6.2",
+    "@storybook/addon-interactions": "^6.4.22",
+    "@storybook/addon-knobs": "^6.4.0",
+    "@storybook/jest": "^0.0.10",
+    "@storybook/preset-create-react-app": "^4.1.0",
+    "@storybook/testing-library": "^0.0.11",
+    "@storybook/theming": "^6.4.22",
+    "@testing-library/jest-dom": "^5.9.0",
     "@testing-library/react": "^13.1.1",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "@testing-library/user-event": "^14.1.1",
+    "axios": "^0.26.1",
+    "cypress": "^9.6.0",
+    "formik": "^2.2.9",
+    "framer-motion": "^4.0.0",
+    "mobx": "^6.5.0",
+    "mobx-react-lite": "^3.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^3.0.0",
+    "react-redux": "^8.0.0",
+    "react-scripts": "5.0.0",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1",
+    "start-server-and-test": "^1.14.0",
+    "storybook-addon-mock": "^2.3.1",
+    "styled-components": "^5.3.5",
+    "web-vitals": "^0.2.2",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "set STORYBOOK_THEME=dark && start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "cypress": "cypress open",
+    "test:cypress": "start-server-and-test start http://localhost:3000 cypress",   
+    "chromatic": "npx chromatic --project-token=63e2f64e1e76"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
+    "extends": "react-app",
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -34,5 +72,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^6.4.21",
+    "@storybook/addon-console": "^1.2.3",
+    "@storybook/addon-essentials": "^6.4.21",
+    "@storybook/addon-links": "^6.4.21",
+    "@storybook/builder-webpack5": "^6.4.21",
+    "@storybook/manager-webpack5": "^6.4.21",
+    "@storybook/node-logger": "^6.4.21",
+    "@storybook/react": "^6.4.21",
+    "chromatic": "^6.5.4",
+    "msw": "^0.39.2",
+    "msw-storybook-addon": "^1.6.3",
+    "webpack": "^5.72.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
