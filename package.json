@@ -14,8 +14,8 @@
     "@storybook/preset-create-react-app": "^4.1.0",
     "@storybook/testing-library": "^0.0.11",
     "@storybook/theming": "^6.4.22",
-    "@testing-library/jest-dom": "^5.9.0",
-    "@testing-library/react": "^13.1.1",
+    "@testing-library/jest-dom": "5.0.0",
+    "@testing-library/react": "^12.1.5",
     "@testing-library/user-event": "^14.1.1",
     "axios": "^0.26.1",
     "cypress": "^9.6.0",
@@ -45,7 +45,7 @@
     "storybook": "set STORYBOOK_THEME=dark && start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "cypress": "cypress open",
-    "test:cypress": "start-server-and-test start http://localhost:3000 cypress",   
+    "test:cypress": "start-server-and-test start http://localhost:3000 cypress",
     "chromatic": "npx chromatic --project-token=63e2f64e1e76"
   },
   "eslintConfig": {
