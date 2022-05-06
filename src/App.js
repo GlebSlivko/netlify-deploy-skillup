@@ -34,7 +34,7 @@ const submit = (value) => {
       <Box textAlign="center" fontSize="xl">
         <Grid minH="100vh" p={3}>
           <ColorModeSwitcher justifySelf="flex-end" />          
-      <Router>
+      <Router> 
         <Routes>
           <Route path={`/`} element={<div>HOME</div>} />     
           <Route path={`/:todoId`} element={<TodoByIdView />} />     
